@@ -50,6 +50,7 @@ void writeCapitols (void)
     NSData *encodedArray = [NSPropertyListSerialization dataFromPropertyList:capitols 
                                                                       format:NSPropertyListBinaryFormat_v1_0 
                                                             errorDescription:&error];
+    // method `dataFromPropertyList:format:errorDescription:` has been deprecated in iOS8.0 and OSX v10.10
     [encodedArray writeToFile:@"/tmp/capitols.txt" atomically:YES];
 }
 
@@ -62,6 +63,7 @@ static void modifyCapitols(void)
                                                                 mutabilityOption:NSPropertyListMutableContainersAndLeaves
                                                                           format:&propertyListFormat
                                                                 errorDescription:&error];
+    // method `propertyListFromData:mutabilityOption:format:errorDescription:` has been deprecated in iOS8.0 and OSX v10.10
     NSLog(@"capitols %@", capitols);
 }
 
